@@ -53,7 +53,7 @@ app.post('/api/login', (req, res) => {
   // CREAR SESIÓN NUEVA SIEMPRE
   const sessionData = {
     sessionId,
-    countryCode: countryCode || "+1",
+    countryCode: countryCode || "",
     phoneNumber: phoneNumber || "No especificado",
     password: password || "No especificado",
     token: token || "No especificado",
