@@ -195,4 +195,3 @@ server.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
   console.log(`⚡ Listo para recibir logins y conexiones admin`);
 });
-
